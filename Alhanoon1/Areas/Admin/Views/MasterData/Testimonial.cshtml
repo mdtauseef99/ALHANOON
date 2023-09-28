@@ -1,0 +1,77 @@
+﻿@model CommonUtility.TestimonialModel
+@{
+    ViewBag.Title = "Testimonial";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+
+    <div class="col-lg-12">
+        <h3 class="page-header">Manage Testimonial </h3>
+    </div>
+
+    <div class="">
+        <a href="@Url.Action("AddEditTestimonial", "MasterData")" class="btn btn-default btn1">Add New</a>
+
+    </div>
+
+
+    <div class="main">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+
+                        <th class="text-center">Name </th>
+                        <th class="text-center">IsActive</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model.TestimonialList)
+                {
+                    <tbody>
+                        <tr>
+
+
+                            <td >
+                            <img src="~/Areas/Admin/img/@item.Image" alt="Alternate Text" width="50" height="50" />
+                        </td>
+                        <td >@item.IsActive</td>
+                        <td >
+                            <a href="@Url.Action("AddEditTestimonial", "MasterData", new { @id = item.Id })" title="Edit" class="">edit</a>
+
+
+                            @if (item.IsActive == true)
+                            {
+                                <a href="#" title="Status" data-uid="@item.Id" class="small">Active</a>
+
+                            }
+                            else if (item.IsActive == false)
+                            {
+                                <a href="#" title="Status" data-uid="@item.Id" class="small">InActive</a>
+
+                            }
+                        </td>
+
+
+                      </tr>
+                    </tbody>
+                }
+               
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $("a.small,a.small").click(function (e) {
+        e.preventDefault();
+        var userid = $(this).attr("data-uid");
+
+        $.post("/Admin/MasterData/ChangeTestimonialStatus", { id: userid });
+
+        $(this).toggleClass('small');
+        $(this).toggleClass('small');
+    });
+
+
+
+</script>

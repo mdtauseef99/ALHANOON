@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db0781514dd84b51b4b18fcf2c49d811" Name="Diagram1">
+        <EntityTypeShape EntityType="AlhanoonModel.About" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Banner" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Contact" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Cost_Comparison" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Department" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Doctor" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Home" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Hospital" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.ScheduleTrip" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Service" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Treatment" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlhanoonModel.Cost_ComparisionContent" Width="1.5" PointX="5" PointY="7.625" />
+        <EntityTypeShape EntityType="AlhanoonModel.LatestNew" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AlhanoonModel.Subscriber" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="AlhanoonModel.Administrator" Width="1.5" PointX="9.375" PointY="6.75" />
+        <EntityTypeShape EntityType="AlhanoonModel.Testimonial" Width="1.5" PointX="7.875" PointY="8.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

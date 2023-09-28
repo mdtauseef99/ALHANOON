@@ -1,0 +1,47 @@
+.main {
+	float: right;
+	width: 100%;
+}
+.white {
+	font-family: 'Pacifico', cursive;
+	font-size: 60px;
+	text-shadow: 2px 2px #ccc;
+	margin-right: 5px;
+	color: #fff;
+}
+.black {
+	font-family: 'Pacifico', cursive;
+	font-size: 60px;
+	text-shadow: 1px 1px #000;
+	color: #383838;
+}
+.logo a:hover {
+	text-decoration: none;
+}
+.logo {
+	margin-top: 25px;
+}
+.content {
+	text-align: center;
+	width: 450px;
+	margin: 0 auto;
+}
+.logo a img {
+	box-shadow: 0 5px 5px 0 #edd2ad;
+}
+.form {
+	margin-top: 30px;
+}
+.form .form-control {
+	padding: 15px;
+	margin: 25px 0;
+}
+.form a{
+	width: 100%;
+	padding: 4px 25px;
+	font-size: 20px;
+}
+.content2{
+	float: left;
+	width: 100%;
+}

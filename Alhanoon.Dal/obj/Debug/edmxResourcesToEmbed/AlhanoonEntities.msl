@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AlhanoonModelStoreContainer" CdmEntityContainer="AlhanoonEntities">
+    <EntitySetMapping Name="Abouts">
+      <EntityTypeMapping TypeName="AlhanoonModel.About">
+        <MappingFragment StoreEntitySet="About">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="InnerDescription" ColumnName="InnerDescription" />
+          <ScalarProperty Name="InnerTitle" ColumnName="InnerTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banners">
+      <EntityTypeMapping TypeName="AlhanoonModel.Banner">
+        <MappingFragment StoreEntitySet="Banner">
+          <ScalarProperty Name="BannerId" ColumnName="BannerId" />
+          <ScalarProperty Name="BannerName" ColumnName="BannerName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="AlhanoonModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactPerson_1" ColumnName="ContactPerson_1" />
+          <ScalarProperty Name="ContactPerson_2" ColumnName="ContactPerson_2" />
+          <ScalarProperty Name="MailFrom" ColumnName="MailFrom" />
+          <ScalarProperty Name="MailTo" ColumnName="MailTo" />
+          <ScalarProperty Name="SmtpClient" ColumnName="SmtpClient" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="smtp_Email" ColumnName="smtp_Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cost_Comparison">
+      <EntityTypeMapping TypeName="AlhanoonModel.Cost_Comparison">
+        <MappingFragment StoreEntitySet="Cost_Comparison">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Procedures" ColumnName="Procedures" />
+          <ScalarProperty Name="US" ColumnName="US" />
+          <ScalarProperty Name="UK" ColumnName="UK" />
+          <ScalarProperty Name="Bangkok" ColumnName="Bangkok" />
+          <ScalarProperty Name="India" ColumnName="India" />
+          <ScalarProperty Name="Singapore" ColumnName="Singapore" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="AlhanoonModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors">
+      <EntityTypeMapping TypeName="AlhanoonModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homes">
+      <EntityTypeMapping TypeName="AlhanoonModel.Home">
+        <MappingFragment StoreEntitySet="Home">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hospitals">
+      <EntityTypeMapping TypeName="AlhanoonModel.Hospital">
+        <MappingFragment StoreEntitySet="Hospital">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScheduleTrips">
+      <EntityTypeMapping TypeName="AlhanoonModel.ScheduleTrip">
+        <MappingFragment StoreEntitySet="ScheduleTrip">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="AlhanoonModel.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treatments">
+      <EntityTypeMapping TypeName="AlhanoonModel.Treatment">
+        <MappingFragment StoreEntitySet="Treatment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Disease" ColumnName="Disease" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cost_ComparisionContents">
+      <EntityTypeMapping TypeName="AlhanoonModel.Cost_ComparisionContent">
+        <MappingFragment StoreEntitySet="Cost_ComparisionContent">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Disclaimer" ColumnName="Disclaimer" />
+          <ScalarProperty Name="ChartTitle" ColumnName="ChartTitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LatestNews">
+      <EntityTypeMapping TypeName="AlhanoonModel.LatestNew">
+        <MappingFragment StoreEntitySet="LatestNews">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscribers">
+      <EntityTypeMapping TypeName="AlhanoonModel.Subscriber">
+        <MappingFragment StoreEntitySet="Subscriber">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="AlhanoonModel.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Testimonials">
+      <EntityTypeMapping TypeName="AlhanoonModel.Testimonial">
+        <MappingFragment StoreEntitySet="Testimonial">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

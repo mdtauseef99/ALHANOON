@@ -1,0 +1,58 @@
+﻿@model CommonUtility.LandingPageModel
+@{
+    ViewBag.Title = "Hospital";
+    Layout = "~/Views/Shared/_Masterlayout.cshtml";
+}
+<style>
+		.breadcrumb {
+			margin: 0;
+		}
+		.main .container {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 20px;
+		}
+		.inline ul li {
+			display: inline-block;
+			padding: 0px 3px;
+			color: #60646D;
+		}
+		.inline ul li i {
+			color: #65C9E3;
+		}
+		.inline ul {
+			padding: 6px 0px;
+		}
+		
+	</style>
+<div class="main">
+			<div class="container">
+				<div class="breadcrumb">
+
+					<ul>
+						<li>
+
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							/
+						</li>
+						<li>
+							Treatment
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+				<div class="article hospital">
+                    <div class="hospital">
+                        @foreach (var item in Model.HospitalList)
+                        {
+                            <div class="col-md-6">
+                                <img src="~/Areas/Admin/img/@item.Image" />
+                            </div>
+                        }
+
+                    </div>
+				</div>
+
+			</div>
+		</div>

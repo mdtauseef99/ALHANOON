@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1772F00D-C1B1-4D4D-BD3F-CA4561919D3D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alhanoon.Dal</RootNamespace>
+    <AssemblyName>Alhanoon.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Alhanoon1\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUsDAL.cs" />
+    <Compile Include="AdministrationDAL.cs" />
+    <Compile Include="Administrator.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDAL.cs" />
+    <Compile Include="AlhanoonEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlhanoonEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlhanoonEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlhanoonEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlhanoonEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Banner.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BannerDAL.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Contact.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactDAL.cs" />
+    <Compile Include="CostComparisionChartDAL.cs" />
+    <Compile Include="CostComparisionContentDAL.cs" />
+    <Compile Include="Cost_ComparisionContent.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cost_Comparison.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentDAL.cs" />
+    <Compile Include="Doctor.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorDAL.cs" />
+    <Compile Include="Home.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeDAL.cs" />
+    <Compile Include="Hospital.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HospitalDAL.cs" />
+    <Compile Include="IndexDAL.cs" />
+    <Compile Include="LatestNew.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LatestNewsDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleTrip.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleTripDAL.cs" />
+    <Compile Include="Service.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesDAL.cs" />
+    <Compile Include="Subscriber.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubscriberDAL.cs" />
+    <Compile Include="Testimonial.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestimonialDAL.cs" />
+    <Compile Include="Treatment.cs">
+      <DependentUpon>AlhanoonEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TreatmentDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtility\CommonUtility.csproj">
+      <Project>{467ff7db-d277-4a9c-bd4d-0efc1cbbfd18}</Project>
+      <Name>CommonUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="AlhanoonEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AlhanoonEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AlhanoonEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AlhanoonEntities.edmx</DependentUpon>
+      <LastGenOutput>AlhanoonEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="AlhanoonEntities.edmx.diagram">
+      <DependentUpon>AlhanoonEntities.edmx</DependentUpon>
+    </None>
+    <None Include="AlhanoonEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AlhanoonEntities.edmx</DependentUpon>
+      <LastGenOutput>AlhanoonEntities.cs</LastGenOutput>
+    </None>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

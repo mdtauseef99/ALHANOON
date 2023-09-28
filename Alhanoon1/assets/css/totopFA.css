@@ -1,0 +1,44 @@
+#totopscroller {
+	position: fixed;
+	right: 40px;
+	bottom: 20px;
+	width: 40px;
+}
+
+#totopscroller i {
+	cursor: pointer;
+	color: #65C9E3;
+	width: 50px;
+	text-align: center;
+	border-radius: 0;
+	background: #fff;
+	border: 2px solid #65C9E3;
+	transition: all 0.2s linear 0s;
+}
+
+#totopscroller i:hover {
+	cursor: pointer;
+	color: #F15B5A;
+	border-color: #F15B5A;
+	transition: all 0.2s linear 0s;
+	background: #fff;
+}
+#totopscroller div {
+	position: relative;
+}
+
+.totopscroller-lnk i {
+	font-weight: bold !important;
+}
+
+.totopscroller-prev {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.totopscroller-bottom {
+	position: absolute;
+	top: 0;
+	left: 0;
+}

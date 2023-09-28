@@ -1,0 +1,123 @@
+﻿@model CommonUtility.DoctorModel
+@{
+    ViewBag.Title = "AddEditDoctor";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@{Html.EnableClientValidation(true);}
+@using (Html.BeginForm("AddEditDoctor", "MasterData", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(x => x.DoctorId)
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Add/Edit Doctor</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Basic Form Elements
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form">
+
+
+                                <div class="form-group">
+                                    <label>Department</label>
+                                    @if (Model.DoctorId == 0)
+                                    {
+                                        @Html.DropDownListFor(x => x.DepartmentId, Model.DoctorsLists, "Select", new { @class = "form-control" })
+                                    }
+                                    @if (Model.DoctorId != 0)
+                                    {
+
+                                        @Html.DropDownListFor(x => x.DepartmentId, Model.DoctorsLists, new { @id = "course", @class = "form-control" })
+                                        @*@Html.DropDownListFor(x => x.DepartmentId, Model.DoctorList, "Select")*@
+                                    }
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Doctor Name</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.DoctorName, new { @class = "form-control", @placeholder = "Doctor Name" })
+                                        @Html.ValidationMessageFor(x => x.DoctorName)
+                                    </p>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Designation</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.Designation, new { @class = "form-control", @placeholder = "Designation" })
+                                        @Html.ValidationMessageFor(x => x.Designation)
+                                    </p>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label>Details</label>
+
+                                    @*<input class="form-control">*@
+                                    <p class="help-block">
+                                        @Html.TextAreaFor(x => x.Details, new { @class = "ckeditor" })
+                                        @Html.ValidationMessageFor(x => x.Details)
+                                    </p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Upload Image</label>
+                                    @if (Model.DoctorId != 0)
+                                    {
+                                        <input type="file" class="text" name="file" id="file" />
+                                    }
+                                    else
+                                    {
+                                        <input type="file" class="text" name="file" id="file" multiple="multiple" />
+                                    }
+                                </div>
+
+
+                                <div class="form-group">
+
+
+                                    @Html.LabelFor(x => x.IsActive, new { @class = "checkbox-inline" })
+
+
+
+                                    @Html.CheckBoxFor(x => x.IsActive, new { @class = "checkbox-inline" })
+
+                                </div>
+
+
+
+                                <input type="submit" value="Submit" class="btn btn-default" />
+                                <a href="@Url.Action("Doctor", "MasterData")" class="btn btn-default">Cancel</a>
+
+
+
+                            
+
+                            </form>
+                        </div>
+                        <!-- /.col-lg-6 (nested) -->
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
+}
+
+

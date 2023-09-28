@@ -1,0 +1,279 @@
+﻿@model CommonUtility.LandingPageModel
+@using System.Text.RegularExpressions;
+@{
+    ViewBag.Title = "Doctors";
+    Layout = "~/Views/Shared/_Masterlayout.cshtml";
+    string DocDetail = string.Empty;
+   
+
+}
+<style>
+		.breadcrumb {
+			margin: 0;
+		}
+		.main .container {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 20px;
+		}
+		.inline ul li {
+			display: inline-block;
+			padding: 0px 3px;
+			color: #60646D;
+		}
+		.inline ul li i {
+			color: #65C9E3;
+		}
+		.inline ul {
+			padding: 6px 0px;
+		}
+		
+</style>
+<div class="clearfix"></div>
+
+<div class="main">
+    <div class="container">
+        <div class="breadcrumb">
+
+            <ul>
+                <li>
+
+                    <a href="@Url.Action("Index","Home")">Home</a>
+                </li>
+                <li>
+                    /
+                </li>
+                <li>
+                    Doctors
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="article doctor-sec">
+            <div class="services" style="margin-top: 0; padding-top: 10px;">
+                <div id="myTab">
+                    <ul class="nav nav-tabs">
+
+                        @foreach (var item in Model.DepartmentList)
+{
+
+    <li>
+        <a href="@Url.Action("Doctors", "Home", new { @id = @item.Id })"> @item.DepartmentName</a>
+    </li>
+
+}
+                        @*<li class="active">
+                            <a href="#home" data-toggle="tab">Cardeology</a>
+                        </li>
+                        <li>
+                            <a href="#profile" data-toggle="tab">Neuro-sciences</a>
+                        </li>
+                        <li>
+                            <a href="#messages" data-toggle="tab">Oncology-cancer</a>
+                        </li>*@
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="home">
+                            <br>
+                            <div class="clearfix"></div>
+
+                            <div class="section">
+
+                                <div class="clearfix"></div>
+
+
+@foreach (var item in Model.DoctorList)
+{
+    <div class="doctor-panel col-md-6" style="padding-left: 0;">
+
+        <img src="~/Areas/Admin/img/@item.Photo" />
+        <h4 class="name">  @item.DoctorName  </h4>
+          <h5 class="desig"><strong>@item.Designation:</strong></h5>
+        @Html.Raw(item.Details)
+    </div>
+}
+
+
+
+
+
+                                @*<div class="doctor-panel col-md-6" style="padding-left: 0;">
+
+                                    <img src="/assets/img/doctor1 (1).jpg" />
+                                    <h4 class="name">Dr. Krishna Subramony Iyer</h4>
+                                    <h5 class="desig"><strong>Designation:</strong> Executive Director</h5>
+                                    <h5 class="desig"><strong>HOSPITAL:</strong> ESCORT FORTIS, NEW DELHI.</h5>
+                                    <p>
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                    </p>
+
+                                </div>
+                                <div class="doctor-panel col-md-6" style="padding-left: 0;">
+
+                                    <img src="/assets/img/doctor1 (2).jpg" />
+                                    <h4 class="name">Dr. Krishna Subramony Iyer</h4>
+                                    <h5 class="desig"><strong>Designation:</strong> Executive Director</h5>
+                                    <h5 class="desig"><strong>HOSPITAL:</strong> ESCORT FORTIS, NEW DELHI.</h5>
+                                    <p>
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                    </p>
+
+                                </div>
+                                <div class="doctor-panel col-md-6" style="padding-left: 0;">
+
+                                    <img src="/assets/img/doctor1 (3).jpg" />
+                                    <h4 class="name">Dr. Krishna Subramony Iyer</h4>
+                                    <h5 class="desig"><strong>Designation:</strong> Executive Director</h5>
+                                    <h5 class="desig"><strong>HOSPITAL:</strong> ESCORT FORTIS, NEW DELHI.</h5>
+                                    <p>
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                    </p>
+
+                                </div>
+                                <div class="doctor-panel col-md-6" style="padding-left: 0;">
+
+                                    <img src="/assets/img/doctor1 (1).jpg" />
+                                    <h4 class="name">Dr. Krishna Subramony Iyer</h4>
+                                    <h5 class="desig"><strong>Designation:</strong> Executive Director</h5>
+                                    <h5 class="desig"><strong>HOSPITAL:</strong> ESCORT FORTIS, NEW DELHI.</h5>
+                                    <p>
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                        Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+                                    </p>
+
+                                </div>*@
+
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+
+                            <div class="clearfix"></div>
+                            <div class="section">
+                                <div class="heading col-md-12">
+                                    <ul class="inline col-md-2 col-xs-3">
+                                        <li>
+                                            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="wrapper">
+
+                                    <div class="jcarousel-wrapper">
+
+                                        <div class="jcarousel sponsors doctors-big">
+                                            <ul style="margin: 0; left: 0 !important;">
+                                                <li class="width">
+                                                    <div class="doctors">
+                                                        <img src="img/kokolaben_01.jpg" />
+                                                        <section class="border">
+                                                            <a href="#">Dr. Karen Dawson</a>
+                                                            <p>
+                                                                Pediatric Clinic
+                                                            </p>
+                                                        </section>
+                                                        <br>
+
+                                                    </div>
+
+                                                </li>
+                                                <li class="width">
+                                                    <div class="doctors">
+                                                        <img src="img/columbia_01.jpg" />
+                                                        <section class="border">
+                                                            <a href="#">Dr. Karen Dawson</a>
+                                                            <p>
+                                                                Pediatric Clinic
+                                                            </p>
+                                                        </section>
+                                                        <br>
+
+                                                    </div>
+                                                </li>
+                                                <li class="width">
+                                                    <div class="doctors">
+                                                        <img src="img/kokolaben_01.jpg" />
+                                                        <section class="border">
+                                                            <a href="#">Dr. Karen Dawson</a>
+                                                            <p>
+                                                                Pediatric Clinic
+                                                            </p>
+                                                        </section>
+                                                        <br>
+
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="messages">
+                            <div class="section">
+                                <div class="heading col-md-12">
+                                    <ul class="inline col-md-2 col-xs-3">
+                                        <li>
+                                            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="wrapper">
+
+                                    <div class="jcarousel-wrapper">
+
+                                        <div class="jcarousel sponsors">
+                                            <ul>
+                                                <li class="">
+
+                                                </li>
+                                                <li>
+
+                                                </li>
+                                                <li></li>
+                                                <li>
+
+                                                </li>
+                                                <li>
+
+                                                </li>
+                                                <li>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

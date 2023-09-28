@@ -1,0 +1,148 @@
+﻿@model CommonUtility.LandingPageModel
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Masterlayout.cshtml";
+}
+<style>
+		
+		.breadcrumb {
+			margin: 0;
+		}
+		.main .container {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 0;
+		}
+		.panel-group {
+			margin-top: 15px;
+		}
+		.panel-body p {
+			padding: 10px 0px;
+			margin-bottom: -10px;
+		}
+		.panel-heading {
+			color: #008FD5 !important;
+		}
+
+</style>
+<div class="main">
+    <div class="container">
+        <div class="breadcrumb">
+
+            <ul>
+                <li>
+
+                    <a href='@Url.Action("Index","Home")'>Home</a>
+                </li>
+                <li>
+                    /
+                </li>
+                <li>
+                    Services
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class=" col-xs-12">
+            @{int i = 0;}
+@foreach (var item in Model.ServicesList)
+{
+            <div class="heading2">
+                <h3>@item.Title</h3>
+            </div>
+            <p>
+                @Html.Raw(item.Description)
+                @*AL-HANOON Medical Tourism takes cares of everything which you require during your medical visit to India for a simple and stress free stay, to make your journey as simple as possible, we will help in taking care of all the formalities required. That way, you can focus on your treatment while we do the rest.
+                Our personalised and experienced team will always work to make sure your journey to India, comfortable and a lifetime time soothing experience.*@
+            </p>
+    i++;
+    if (i == 1)
+    {
+        break;
+    }
+}
+            <div class="clearfix">
+                <div class="panel-group" id="accordion">
+@foreach (var item in Model.ServicesList)
+{
+     <div class="panel panel-default">
+                        <a class="panel-heading col-md-12" data-toggle="collapse" data-parent="#accordion" href="#@item.Id">@item.Title<i class="fa fa-chevron-down"></i> </a>
+                        <div id="@item.Id" class="panel-collapse collapse in">
+                            <div class="panel-body">
+
+                                    @Html.Raw(item.Description)
+                                    @*As soon as you fill up the Registration Form online on the website or email us giving specific details of medical condition and medical reports along, on the same moment we will review your needs, and based on their assessment our team will arrange your reports to be assessed by a doctors. We will select a doctor who is skilled in your area of need and understands the best of your requirements.
+                                    Based on that we will provide you a quote from best suitable hospitals and detailed treatment plans for you, so that you can plan your journey accordingly.*@
+
+                            </div>
+                        </div>
+                    </div>
+}
+
+
+                    @*<div class="panel panel-default">
+                        <a class="panel-heading col-md-12" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Care Co-ordination<i class="fa fa-chevron-down"></i> </a>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <p>
+                                    As soon as you fill up the Registration Form online on the website or email us giving specific details of medical condition and medical reports along, on the same moment we will review your needs, and based on their assessment our team will arrange your reports to be assessed by a doctors. We will select a doctor who is skilled in your area of need and understands the best of your requirements.
+                                    Based on that we will provide you a quote from best suitable hospitals and detailed treatment plans for you, so that you can plan your journey accordingly.
+                                    <div class="clearfix"></div>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="panel-heading col-md-12" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Airport pick-up/Drop-off facility<i class="fa fa-chevron-down"></i> </a>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>
+                                    AL-HANOON Medical tourism provides its patients and their attendant airport pick-up as they arrives India and drop-off as they finish with their treatment, facility absolutely free.
+                                    A cab will pick you up from the airport and drop you the hotel, hospital or guest house as decided before in the plan.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="panel-heading col-md-12" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">In-House Translators<i class="fa fa-chevron-down"></i> </a>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>
+                                    During your visit, AL-HANOON Medical Tourism arrange translators to accompany you to your doctor visits, that way, you can express your condition fully and the doctors will understand your problem fully and can provide you the best of their treatment.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="panel-heading col-md-12" data-toggle="collapse" data-parent="#accordion" href="#collapse4">Travel, accommodation and transport<i class="fa fa-chevron-down"></i> </a>
+                        <div id="collapse4" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>
+                                    In association with leading travel providers AL-HANOON Medical tourism assist you with all your travel needs and make sure you have an easy and pleasant journey. If you do not wish to arrange your airfare yourself, we can do it for you, ensuring your travel dates are coordinated with your hospital visit.
+                                    AL-HANOON Medical tourism also arranges accommodation for you close to the hospital you will be visiting. We have access to a range of different hotels, guest houses etc depending on your needs.
+                                    We can also provide you with an affordable transportation service required by you to and from various destinations inside the city during your visit.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <a class="panel-heading col-md-12" data-toggle="collapse" data-parent="#accordion" href="#collapse5">Chilling out:<i class="fa fa-chevron-down"></i> </a>
+                        <div id="collapse5" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>
+                                    AL-HANOON Medical tourism also offers you all inclusive and affordable tourism and sightseeing tour packages to various destinations in India. That can give you chance to explore the local culture, food, the way of life and provides you the opportunity to explore the beautiful country.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+</div>

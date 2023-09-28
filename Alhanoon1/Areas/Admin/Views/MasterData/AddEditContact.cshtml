@@ -1,0 +1,146 @@
+﻿@model CommonUtility.ContactModel
+@{
+    ViewBag.Title = "AddEditContact";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@{Html.EnableClientValidation(true);}
+@using (Html.BeginForm("AddEditContact", "MasterData", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(x => x.Id)
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Add/Edit Contact</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Basic Form Elements
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form">
+
+
+                                <div class="form-group">
+                                    <label>Address</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.Address, new { @class = "form-control", @placeholder = "Address" })
+                                        @Html.ValidationMessageFor(x => x.Address)
+                                    </p>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Contact Person</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.ContactPerson_1, new { @class = "form-control", @placeholder = "contact Person" })
+                                        @Html.ValidationMessageFor(x => x.ContactPerson_1)
+                                    </p>
+                                </div>
+
+                             
+                                <div class="form-group">
+                                    <label>Other Contact Person</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.ContactPerson_2, new { @class = "form-control", @placeholder = "contact Person" })
+                                        @Html.ValidationMessageFor(x => x.ContactPerson_2)
+                                    </p>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Mail From</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.MailFrom, new { @class = "form-control", @placeholder = "Mailing From" })
+                                        @Html.ValidationMessageFor(x => x.MailFrom)
+                                    </p>
+                                </div>
+                              
+                              
+
+                                <div class="form-group">
+                                    <label>Mail To</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.MailTo, new { @class = "form-control", @placeholder = "Mailing To" })
+                                        @Html.ValidationMessageFor(x => x.MailTo)
+                                    </p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Smtp Client</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.SmtpClient, new { @class = "form-control", @placeholder = "Smtp Client" })
+                                        @Html.ValidationMessageFor(x => x.SmtpClient)
+                                    </p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Port</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.Port, new { @class = "form-control", @placeholder = 1234 })
+                                        @Html.ValidationMessageFor(x => x.Port)
+                                    </p>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Smtp email</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.smtp_Email, new { @class = "form-control", @placeholder = "Smtp Email" })
+                                        @Html.ValidationMessageFor(x => x.smtp_Email)
+                                    </p>
+                                </div>
+                             
+                                <div class="form-group">
+                                    <label>Password</label>
+
+                                    <p class="help-block">
+                                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @placeholder = "Password" })
+                                        @Html.ValidationMessageFor(x => x.Password)
+                                    </p>
+                                </div>
+
+                             
+
+
+                                <div class="form-group">
+
+
+                                    @Html.LabelFor(x => x.IsActive, new { @class = "checkbox-inline" })
+
+
+
+                                    @Html.CheckBoxFor(x => x.IsActive, new { @class = "checkbox-inline" })
+
+                                </div>
+
+
+                                <input type="submit" value="Submit" class="btn btn-default" />
+                                <a href="@Url.Action("Contact","MasterData")" class="btn btn-default">Cancel</a>
+                            </form>
+                        </div>
+                        <!-- /.col-lg-6 (nested) -->
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+    </div>
+}
+
+

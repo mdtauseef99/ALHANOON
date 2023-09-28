@@ -1,0 +1,74 @@
+﻿@model CommonUtility.LandingPageModel
+@{
+    ViewBag.Title = "Testimonial";
+    Layout = "~/Views/Shared/_Masterlayout.cshtml";
+}
+
+<style>
+		.main .container {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 30px;
+		}
+
+		
+</style>
+<div class="container">
+    <div class="breadcrumb">
+
+        <ul>
+            <li>
+
+               <a href="@Url.Action("Index","Home")">Home</a>
+            </li>
+            <li>
+                /
+            </li>
+            <li>
+                Testimonial
+            </li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="testi">
+         @foreach(var item in Model.TestimonialList)
+            { 
+        <div class="col-md-3">
+            <img src="/Areas/Admin/img/@item.Image" />
+           @Html.Raw(item.Description)
+           @* <h4>Mike Tompson</h4>
+            <p>
+                <i class="fa fa-quote-left"></i>
+                <span> Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </span>
+                <i class="fa fa-quote-right"></i>
+            </p>*@
+        </div>@*
+        <div class="col-md-3">
+            <img src="img/testi2.jpg" />
+            <h4>Mike Tompson</h4>
+            <p>
+                <i class="fa fa-quote-left"></i>
+                <span> Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </span>
+                <i class="fa fa-quote-right"></i>
+            </p>
+        </div>
+        <div class="col-md-3">
+            <img src="img/testi1.jpg 	" />
+            <h4>Mike Tompson</h4>
+            <p>
+                <i class="fa fa-quote-left"></i>
+                <span> Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </span>
+                <i class="fa fa-quote-right"></i>
+            </p>
+        </div>
+        <div class="col-md-3">
+            <img src="img/testi2.jpg" />
+            <h4>Mike Tompson</h4>
+            <p>
+                <i class="fa fa-quote-left"></i>
+                <span> Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. </span>
+                <i class="fa fa-quote-right"></i>
+            </p>
+        </div>*@
+         }
+    </div>
+</div>

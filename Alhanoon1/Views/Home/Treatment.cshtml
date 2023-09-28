@@ -1,0 +1,112 @@
+﻿@model CommonUtility.LandingPageModel
+@{
+    ViewBag.Title = "Treatment";
+    Layout = "~/Views/Shared/_Masterlayout.cshtml";
+    string Desc = string.Empty;
+    string Title = string.Empty;
+}
+
+<style>
+		.breadcrumb {
+			margin: 0;
+		}
+		.main .container {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 20px;
+		}
+		.inline ul li {
+			display: inline-block;
+			padding: 0px 3px;
+			color: #60646D;
+		}
+		.inline ul li i {
+			color: #65C9E3;
+		}
+		.inline ul {
+			padding: 6px 0px;
+		}
+		
+</style>
+
+<div class="clearfix"></div>
+
+<div class="main">
+    <div class="container">
+        <div class="breadcrumb">
+
+            <ul>
+                <li>
+
+                    <a href='@Url.Action("Index","Home")'>Home</a>
+                </li>
+                <li>
+                    /
+                </li>
+                <li>
+                    Treatment
+                </li>
+            </ul>
+        </div>
+        <div class=" inline" style="padding-left: 0;padding-top: 15px;">
+
+            <div id="myTab">
+                <ul class="nav nav-tabs treatment-list-nav col-md-3">
+                    @foreach (var item in Model.TreatmentList)
+                    {
+
+                        <li>
+                            <a href="@Url.Action("Treatment", "Home", new { @id = @item.Id })"> @item.Title</a>
+                        </li>
+
+                    }
+
+                </ul>
+                <div class="tab-content col-md-9">
+                    @foreach (var item in Model.TreatmentListById)
+                    {
+                        <div class="tab-pane fade in active" id="home">
+                        <div class="heading2">
+                            <h4>@item.Disease</h4>
+                        </div>
+                         @Html.Raw(@item.Description)
+
+                    </div>
+
+                       
+
+                    }
+
+                    @*<div class="tab-pane fade in active" id="home">
+                        <div class="heading2">
+                            <h4>Stress/Resting Thallium</h4>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum varius ex. Sed eget varius ante. Donec nisl quam, semper quis ex eu, porta feugiat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel turpis eget nulla congue sollicitudin. Praesent congue metus ut nisi ultrices placerat. Vestibulum tempus laoreet orci id molestie. Sed tempus massa sit amet purus aliquet, at egestas turpis ornare. Vivamus velit sem, rutrum ut aliquam at, eleifend a est. Praesent blandit porta mauris eu sollicitudin. Vestibulum orci purus, ultrices sed erat sed, scelerisque finibus mi. Donec in purus quam. Mauris dapibus pulvinar mauris, a feugiat purus bibendum ac. Phasellus vel ligula ultricies, interdum dui ut, congue nunc. Donec non diam at velit semper porta ut quis velit. In viverra ullamcorper est sit amet pharetra.
+                        </p>
+
+                    </div>
+                    <div class="tab-pane fade" id="profile">
+
+                        <div class="heading2">
+                            <h4>Cardiac CT-Calcium Scoring</h4>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum varius ex. Sed eget varius ante. Donec nisl quam, semper quis ex eu, porta feugiat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel turpis eget nulla congue sollicitudin. Praesent congue metus ut nisi ultrices placerat. Vestibulum tempus laoreet orci id molestie. Sed tempus massa sit amet purus aliquet, at egestas turpis ornare. Vivamus velit sem, rutrum ut aliquam at, eleifend a est. Praesent blandit porta mauris eu sollicitudin. Vestibulum orci purus, ultrices sed erat sed, scelerisque finibus mi. Donec in purus quam. Mauris dapibus pulvinar mauris, a feugiat purus bibendum ac. Phasellus vel ligula ultricies, interdum dui ut, congue nunc. Donec non diam at velit semper porta ut quis velit. In viverra ullamcorper est sit amet pharetra.
+                        </p>
+
+                    </div>
+                    <div class="tab-pane fade" id="messages">
+                        <div class="heading2">
+                            <h4>Coronary MR Angiography</h4>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum varius ex. Sed eget varius ante. Donec nisl quam, semper quis ex eu, porta feugiat sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel turpis eget nulla congue sollicitudin. Praesent congue metus ut nisi ultrices placerat. Vestibulum tempus laoreet orci id molestie. Sed tempus massa sit amet purus aliquet, at egestas turpis ornare. Vivamus velit sem, rutrum ut aliquam at, eleifend a est. Praesent blandit porta mauris eu sollicitudin. Vestibulum orci purus, ultrices sed erat sed, scelerisque finibus mi. Donec in purus quam. Mauris dapibus pulvinar mauris, a feugiat purus bibendum ac. Phasellus vel ligula ultricies, interdum dui ut, congue nunc. Donec non diam at velit semper porta ut quis velit. In viverra ullamcorper est sit amet pharetra.
+                        </p>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--------- footer ---------->

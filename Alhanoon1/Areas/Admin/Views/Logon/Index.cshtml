@@ -1,0 +1,55 @@
+﻿@model CommonUtility.LogonModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Logon</title>
+    <script src="~/Areas/Admin/scripts/jquery.js"></script>
+    <link href="~/Areas/Admin/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Areas/Admin/css/jquery.smartmenus.bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Areas/Admin/css/layout.css" />
+    <link href="~/Areas/Admin/css/layout.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/css/other.css" rel="stylesheet" />
+</head>
+<body>
+@using (Html.BeginForm("Login", "Logon"))
+        {
+    <div class="main">
+        <div class="top-bar"></div>
+        <div class="clearfix"></div>
+        <div class="content">
+            <div class="logo">
+                <a href="../Home.aspx"> <img alt="" src="~/Areas/Admin/img/logo-alhan.png" /></a>
+                @if (Session["Error"] != null)
+                {
+                    <div class="errormsgs">
+                        @Session["Error"].ToString()
+                    </div>
+                    Session["Error"] = null;
+                }
+            </div>
+            <div class="form">
+                @Html.TextBoxFor(x => x.EmailId, new { @placeholder = "Email", @class = "form-control" })
+                @*@Html.ValidationMessageFor(x => x.EmailId)*@
+                @Html.PasswordFor(x => x.Password, new { @placeholder = "Password", @class = "form-control" })
+                @*@Html.ValidationMessageFor(x => x.Password)*@
+
+
+                @*<input type="text" class="form-control" placeholder="Enter User name">
+                <input type="text" class="form-control" placeholder="Please Enter Password">*@
+
+                <input type="submit" value="Log-in" class="btn" />
+            </div>
+        </div>
+    </div>
+}
+
+    <script src="~/Areas/Admin/scripts/modernizr.custom.js"></script>
+</body>
+</html>

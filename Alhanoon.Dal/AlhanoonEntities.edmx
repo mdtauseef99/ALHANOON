@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AlhanoonModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AlhanoonModelStoreContainer">
+          <EntitySet Name="About" EntityType="AlhanoonModel.Store.About" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Administrator" EntityType="AlhanoonModel.Store.Administrator" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Banner" EntityType="AlhanoonModel.Store.Banner" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contact" EntityType="AlhanoonModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cost_ComparisionContent" EntityType="AlhanoonModel.Store.Cost_ComparisionContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cost_Comparison" EntityType="AlhanoonModel.Store.Cost_Comparison" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Department" EntityType="AlhanoonModel.Store.Department" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Doctor" EntityType="AlhanoonModel.Store.Doctor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Home" EntityType="AlhanoonModel.Store.Home" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Hospital" EntityType="AlhanoonModel.Store.Hospital" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LatestNews" EntityType="AlhanoonModel.Store.LatestNews" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ScheduleTrip" EntityType="AlhanoonModel.Store.ScheduleTrip" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Services" EntityType="AlhanoonModel.Store.Services" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Subscriber" EntityType="AlhanoonModel.Store.Subscriber" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Testimonial" EntityType="AlhanoonModel.Store.Testimonial" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Treatment" EntityType="AlhanoonModel.Store.Treatment" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="InnerTitle" Type="nvarchar(max)" />
+          <Property Name="InnerDescription" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="BannerId" />
+          </Key>
+          <Property Name="BannerId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BannerName" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="ContactPerson_1" Type="nvarchar(max)" />
+          <Property Name="ContactPerson_2" Type="nvarchar(max)" />
+          <Property Name="MailFrom" Type="nvarchar(max)" />
+          <Property Name="MailTo" Type="nvarchar(max)" />
+          <Property Name="SmtpClient" Type="nvarchar(max)" />
+          <Property Name="Port" Type="int" Nullable="false" />
+          <Property Name="smtp_Email" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cost_ComparisionContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ChartTitle" Type="nvarchar(max)" />
+          <Property Name="Disclaimer" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cost_Comparison">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Procedures" Type="nvarchar(max)" />
+          <Property Name="US" Type="decimal" Scale="2" />
+          <Property Name="UK" Type="decimal" Scale="2" />
+          <Property Name="Bangkok" Type="decimal" Scale="2" />
+          <Property Name="India" Type="decimal" Scale="2" />
+          <Property Name="Singapore" Type="decimal" Scale="2" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="DoctorId" />
+          </Key>
+          <Property Name="DoctorId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorName" Type="nvarchar(max)" />
+          <Property Name="Designation" Type="nvarchar(max)" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="Details" Type="nvarchar(max)" />
+          <Property Name="DepartmentId" Type="bigint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LatestNews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScheduleTrip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Testimonial">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Treatment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Disease" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AlhanoonModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AlhanoonEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Abouts" EntityType="AlhanoonModel.About" />
+          <EntitySet Name="Banners" EntityType="AlhanoonModel.Banner" />
+          <EntitySet Name="Contacts" EntityType="AlhanoonModel.Contact" />
+          <EntitySet Name="Cost_Comparison" EntityType="AlhanoonModel.Cost_Comparison" />
+          <EntitySet Name="Departments" EntityType="AlhanoonModel.Department" />
+          <EntitySet Name="Doctors" EntityType="AlhanoonModel.Doctor" />
+          <EntitySet Name="Homes" EntityType="AlhanoonModel.Home" />
+          <EntitySet Name="Hospitals" EntityType="AlhanoonModel.Hospital" />
+          <EntitySet Name="ScheduleTrips" EntityType="AlhanoonModel.ScheduleTrip" />
+          <EntitySet Name="Services" EntityType="AlhanoonModel.Service" />
+          <EntitySet Name="Treatments" EntityType="AlhanoonModel.Treatment" />
+          <EntitySet Name="Cost_ComparisionContents" EntityType="AlhanoonModel.Cost_ComparisionContent" />
+          <EntitySet Name="LatestNews" EntityType="AlhanoonModel.LatestNew" />
+          <EntitySet Name="Subscribers" EntityType="AlhanoonModel.Subscriber" />
+          <EntitySet Name="Administrators" EntityType="AlhanoonModel.Administrator" />
+          <EntitySet Name="Testimonials" EntityType="AlhanoonModel.Testimonial" />
+        </EntityContainer>
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="InnerTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InnerDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="BannerId" />
+          </Key>
+          <Property Name="BannerId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BannerName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ContactPerson_1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ContactPerson_2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MailFrom" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MailTo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="SmtpClient" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Port" Type="Int32" Nullable="false" />
+          <Property Name="smtp_Email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cost_Comparison">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Procedures" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="US" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UK" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Bangkok" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="India" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Singapore" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="DoctorId" />
+          </Key>
+          <Property Name="DoctorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Designation" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hospital">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScheduleTrip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Treatment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Disease" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cost_ComparisionContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ChartTitle" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Disclaimer" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LatestNew">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Testimonial">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Image" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AlhanoonModelStoreContainer" CdmEntityContainer="AlhanoonEntities">
+          <EntitySetMapping Name="Abouts">
+            <EntityTypeMapping TypeName="AlhanoonModel.About">
+              <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="InnerDescription" ColumnName="InnerDescription" />
+                <ScalarProperty Name="InnerTitle" ColumnName="InnerTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Banners">
+            <EntityTypeMapping TypeName="AlhanoonModel.Banner">
+              <MappingFragment StoreEntitySet="Banner">
+                <ScalarProperty Name="BannerId" ColumnName="BannerId" />
+                <ScalarProperty Name="BannerName" ColumnName="BannerName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="AlhanoonModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactPerson_1" ColumnName="ContactPerson_1" />
+                <ScalarProperty Name="ContactPerson_2" ColumnName="ContactPerson_2" />
+                <ScalarProperty Name="MailFrom" ColumnName="MailFrom" />
+                <ScalarProperty Name="MailTo" ColumnName="MailTo" />
+                <ScalarProperty Name="SmtpClient" ColumnName="SmtpClient" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="smtp_Email" ColumnName="smtp_Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cost_Comparison">
+            <EntityTypeMapping TypeName="AlhanoonModel.Cost_Comparison">
+              <MappingFragment StoreEntitySet="Cost_Comparison">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Procedures" ColumnName="Procedures" />
+                <ScalarProperty Name="US" ColumnName="US" />
+                <ScalarProperty Name="UK" ColumnName="UK" />
+                <ScalarProperty Name="Bangkok" ColumnName="Bangkok" />
+                <ScalarProperty Name="India" ColumnName="India" />
+                <ScalarProperty Name="Singapore" ColumnName="Singapore" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="AlhanoonModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="AlhanoonModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctor">
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Homes">
+            <EntityTypeMapping TypeName="AlhanoonModel.Home">
+              <MappingFragment StoreEntitySet="Home">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hospitals">
+            <EntityTypeMapping TypeName="AlhanoonModel.Hospital">
+              <MappingFragment StoreEntitySet="Hospital">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleTrips">
+            <EntityTypeMapping TypeName="AlhanoonModel.ScheduleTrip">
+              <MappingFragment StoreEntitySet="ScheduleTrip">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="AlhanoonModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Treatments">
+            <EntityTypeMapping TypeName="AlhanoonModel.Treatment">
+              <MappingFragment StoreEntitySet="Treatment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Disease" ColumnName="Disease" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cost_ComparisionContents">
+            <EntityTypeMapping TypeName="AlhanoonModel.Cost_ComparisionContent">
+              <MappingFragment StoreEntitySet="Cost_ComparisionContent">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Disclaimer" ColumnName="Disclaimer" />
+                <ScalarProperty Name="ChartTitle" ColumnName="ChartTitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LatestNews">
+            <EntityTypeMapping TypeName="AlhanoonModel.LatestNew">
+              <MappingFragment StoreEntitySet="LatestNews">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscribers">
+            <EntityTypeMapping TypeName="AlhanoonModel.Subscriber">
+              <MappingFragment StoreEntitySet="Subscriber">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Administrators">
+            <EntityTypeMapping TypeName="AlhanoonModel.Administrator">
+              <MappingFragment StoreEntitySet="Administrator">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Testimonials">
+            <EntityTypeMapping TypeName="AlhanoonModel.Testimonial">
+              <MappingFragment StoreEntitySet="Testimonial">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

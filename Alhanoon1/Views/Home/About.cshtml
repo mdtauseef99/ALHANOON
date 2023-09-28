@@ -1,0 +1,167 @@
+﻿@model CommonUtility.LandingPageModel
+@using System.Text.RegularExpressions;
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Masterlayout.cshtml";
+    string Desc = string.Empty;
+    string InnerDesc = string.Empty;
+    string TestDesc = string.Empty;
+}
+<style>
+		.main .container {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 0;
+		}
+		
+</style>
+<div class="main">
+    <div class="container">
+        <div class="breadcrumb">
+
+            <ul>
+                <li>
+
+                    <a href="@Url.Action("Index","Home")">Home</a>
+                </li>
+                <li>
+                    /
+                </li>
+                <li>
+                    About us
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-3">
+            <div class="offer">
+                <h4>What we offer</h4>
+                <section>
+                    <ul>
+                        <li class="number col-md-2 col-xs-2">
+                            1.
+                        </li>
+                        <li class="col-md-10 col-xs-10">
+                            <a href="#"> lorem ipsum dolore est </a>
+                            <p>
+
+                                Aipisicing elit, sed do eiusmod tempo rincidint ut labore et
+                            </p>
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <li class="number col-md-2 col-xs-2">
+                            2.
+                        </li>
+                        <li class="col-md-10 col-xs-10">
+                            <a href="#"> adipiscing elit sed </a>
+                            <p>
+                                Aipisicing elit, sed do eiusmod tempo rincidint ut labore et
+                            </p>
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <li class="number col-md-2 col-xs-2">
+                            3.
+                        </li>
+                        <li class="col-md-10 col-xs-10">
+                            <a href="#">massa as laoreetum</a>
+                            <p>
+                                Aipisicing elit, sed do eiusmod tempo rincidint ut labore et
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+                <ul class="">
+                    <h4>Testimonilas</h4>
+                    <section style="border: none;">
+                        <ul class="number2">
+                            <li class="number col-md-2 col-xs-2">
+                                <i class="fa fa-quote-left"></i>
+                            </li>
+                            <li class="col-md-10 col-xs-10">
+                                
+                                 @{int i = 0;}
+                                
+                @foreach (var item1 in Model.TestimonialList)
+                {
+                   
+
+                    if (@item1.Description != "")
+                    {
+                        TestDesc = System.Text.RegularExpressions.Regex.Replace(@item1.Description, @"<[^>]+>|&nbsp;|&quot;", String.Empty);
+                        TestDesc = TestDesc.Substring(0, 110);
+                    }
+                    @TestDesc
+                    
+                   
+                    i++;
+                    if (i == 1)
+                    {
+                        break;
+                    }
+                }
+                                 
+                               @* <p>
+                                    Praesent dictum dapibus nisl id convallis. Nam condimentum mattis eros. Nulla aliquet commodo leo, et porta metus placerat pharetra. Cras vulputate aliqu...
+                                </p>
+                                <p class="right">
+                                    Mike Tompson
+                                </p>*@
+                            <li>
+
+                        </ul>
+                        <a style="float: right;" href='@Url.Action("Testimonial","Home")' class="btn2">View more Testimonials</a>
+                    </section>
+            </div>
+
+        </div>
+        <div class="col-md-9 article2">
+@foreach (var item in Model.AboutUsList)
+{ 
+            <div class="heading">
+                <h4>@item.Title </h4>
+            </div>
+            <div class="contain2">
+                @*<a href="#"></a>*@
+
+                @Html.Raw(item.Description)
+
+             
+
+
+              
+                @*<a href="#">Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor.</a>*@
+                @*<p>
+                    Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo.
+                </p>
+                <p>
+                    Quisque nulla. Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit magna, hendrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat.
+                </p>*@
+            </div>
+            <div class="heading">
+                <h4>@item.InnerTitle</h4>
+            </div>
+            <div class="contain2">
+                <div>
+
+              
+                        <img style="float: left; margin: 1px 8px 1px 0px;" src="/Areas/Admin/img/@item.Image" />
+                        @*<a href="#">Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum</a>*@
+                    
+                        @Html.Raw(item.InnerDescription)
+                        @*Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem.
+
+                        Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo.
+
+                        Vestibulum libero nisl, porta vel, scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.*@
+
+                   
+                </div>
+            </div>
+}
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,115 @@
+﻿@model CommonUtility.LandingPageModel
+ @using System.Text.RegularExpressions;
+@{
+    ViewBag.Title = "CostComparison";
+    Layout = "~/Views/Shared/_Masterlayout.cshtml";
+    string ChartDesc = string.Empty;
+}
+<style>
+		.breadcrumb {
+			margin: 0;
+		}
+		.main .container {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 20px;
+		}
+		.inline ul li {
+			display: inline-block;
+			padding: 0px 3px;
+			color: #60646D;
+		}
+		.inline ul li i {
+			color: #65C9E3;
+		}
+		.inline ul {
+			padding: 6px 0px;
+		}
+		
+</style>
+<div class="clearfix"></div>
+
+<div class="main">
+    <div class="container">
+        <div class="breadcrumb">
+
+            <ul>
+                <li>
+
+                    <a href="@Url.Action("Index","Home")">Home</a>
+                </li>
+                <li>
+                    /
+                </li>
+                <li>
+                    Cost Comparison
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="article cost">
+            @foreach(var item in Model.CostComparisionContentList)
+            { 
+            <div class="heading2">
+                <h3>@item.Title</h3>
+            </div>
+            
+                @Html.Raw(item.Description)
+                @*Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat*@
+           
+            }
+            <div class="clearfix"></div>
+            <div class="table">
+                <div class="head">
+                    <div class="col-md-2">
+                        Procedure
+                    </div>
+                    <div class="col-md-2">
+                        US
+                    </div>
+                    <div class="col-md-2">
+                        UK
+                    </div>
+                    <div class="col-md-2">
+                        Bangkok
+                    </div>
+                    <div class="col-md-2">
+                        India
+                    </div>
+                    <div class="col-md-2">
+                        Singapore
+                    </div>
+                </div>
+                
+                    @foreach (var item in Model.CostComparisionChartList)
+{
+    <div class="tabel-content">
+        <div class="col-md-2">
+            @item.Procedures
+        </div>
+        <div class="col-md-2">
+            @item.US
+        </div>
+        <div class="col-md-2">
+            @item.UK
+        </div>
+        <div class="col-md-2">
+            @item.Bangkok
+        </div>
+        <div class="col-md-2">
+            @item.India
+        </div>
+        <div class="col-md-2">
+            @item.Singapore
+        </div>
+    </div>
+}
+                   
+               
+              
+               
+            </div>
+        </div>
+
+    </div>
+</div>
+
